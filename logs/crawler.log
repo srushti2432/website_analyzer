@@ -1,0 +1,897 @@
+2025-10-18 03:23:45,918 [INFO] \U0001f680 API started
+2025-10-18 03:24:24,141 [INFO] \U0001f680 API started
+2025-10-18 03:50:01,839 [ERROR] Exception in callback SyncBase._sync.<locals>.<lambda>() at C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_sync_base.py:111
+handle: <Handle SyncBase._sync.<locals>.<lambda>() at C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_sync_base.py:111>
+Traceback (most recent call last):
+  File "C:\Users\Srushti\Desktop\website analyzer\src\crawler\test.py", line 101, in fetch_single_page_sync
+    page.goto(url, timeout=timeout, wait_until=wait_until)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\sync_api\_generated.py", line 9019, in goto
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.goto(
+        ^^^^^^^^^^^^^^^^^^^^
+            url=url, timeout=timeout, waitUntil=wait_until, referer=referer
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        )
+        ^
+    )
+    ^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_page.py", line 556, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+        "goto", self._navigation_timeout, locals_to_params(locals())
+    )
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_connection.py", line 558, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.txel.org/commissionerrules/?tab=tab9", waiting until "load"
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python313\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 111, in <lambda>
+    task.add_done_callback(lambda _: g_self.switch())
+                                     ~~~~~~~~~~~~~^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_helper.py", line 451, in _handler
+    self.handler(route, route.request)  # type: ignore
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_impl_to_api_mapping.py", line 123, in wrapper_func
+    return handler(
+        *list(map(lambda a: self.from_maybe_impl(a), args))[:arg_count]
+    )
+  File "C:\Users\Srushti\Desktop\website analyzer\src\crawler\test.py", line 99, in <lambda>
+    context.route("**/*", lambda route, request: route.abort() if request.resource_type in {"image", "stylesheet", "font", "media"} else route.continue_())
+                                                                                                                                         ~~~~~~~~~~~~~~~^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\sync_api\_generated.py", line 963, in continue_
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.continue_(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_network.py", line 506, in continue_
+    return await self._handle_route(_inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_network.py", line 452, in _handle_route
+    await callback()
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_network.py", line 504, in _inner
+    await self._inner_continue(False)
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_network.py", line 510, in _inner_continue
+    await self._race_with_page_close(
+    ...<17 lines>...
+    )
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_network.py", line 546, in _race_with_page_close
+    await asyncio.wait(
+    ...<2 lines>...
+    )
+  File "C:\Python313\Lib\asyncio\tasks.py", line 451, in wait
+    return await _wait(fs, timeout, return_when, loop)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\asyncio\tasks.py", line 537, in _wait
+    await waiter
+asyncio.exceptions.CancelledError
+2025-10-18 03:50:01,990 [ERROR] Exception in callback SyncBase._sync.<locals>.<lambda>() at C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_sync_base.py:111
+handle: <Handle SyncBase._sync.<locals>.<lambda>() at C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_sync_base.py:111>
+Traceback (most recent call last):
+  File "C:\Users\Srushti\Desktop\website analyzer\src\crawler\test.py", line 101, in fetch_single_page_sync
+    page.goto(url, timeout=timeout, wait_until=wait_until)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\sync_api\_generated.py", line 9019, in goto
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.goto(
+        ^^^^^^^^^^^^^^^^^^^^
+            url=url, timeout=timeout, waitUntil=wait_until, referer=referer
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        )
+        ^
+    )
+    ^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_page.py", line 556, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+        "goto", self._navigation_timeout, locals_to_params(locals())
+    )
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_connection.py", line 558, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.txel.org/commissionerrules/?tab=tab9", waiting until "load"
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python313\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 111, in <lambda>
+    task.add_done_callback(lambda _: g_self.switch())
+                                     ~~~~~~~~~~~~~^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_helper.py", line 451, in _handler
+    self.handler(route, route.request)  # type: ignore
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_impl_to_api_mapping.py", line 123, in wrapper_func
+    return handler(
+        *list(map(lambda a: self.from_maybe_impl(a), args))[:arg_count]
+    )
+  File "C:\Users\Srushti\Desktop\website analyzer\src\crawler\test.py", line 99, in <lambda>
+    context.route("**/*", lambda route, request: route.abort() if request.resource_type in {"image", "stylesheet", "font", "media"} else route.continue_())
+                                                 ~~~~~~~~~~~^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\sync_api\_generated.py", line 675, in abort
+    self._sync(self._impl_obj.abort(errorCode=error_code))
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_network.py", line 357, in abort
+    await self._handle_route(
+    ...<9 lines>...
+    )
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_network.py", line 452, in _handle_route
+    await callback()
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_network.py", line 546, in _race_with_page_close
+    await asyncio.wait(
+    ...<2 lines>...
+    )
+  File "C:\Python313\Lib\asyncio\tasks.py", line 451, in wait
+    return await _wait(fs, timeout, return_when, loop)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\asyncio\tasks.py", line 537, in _wait
+    await waiter
+asyncio.exceptions.CancelledError
+2025-10-18 03:50:02,000 [ERROR] Exception in callback Connection.dispatch.<locals>._done_callback() at C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_connection.py:465
+handle: <Handle Connection.dispatch.<locals>._done_callback() at C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_connection.py:465>
+Traceback (most recent call last):
+  File "C:\Users\Srushti\Desktop\website analyzer\src\crawler\test.py", line 101, in fetch_single_page_sync
+    page.goto(url, timeout=timeout, wait_until=wait_until)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\sync_api\_generated.py", line 9019, in goto
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.goto(
+        ^^^^^^^^^^^^^^^^^^^^
+            url=url, timeout=timeout, waitUntil=wait_until, referer=referer
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        )
+        ^
+    )
+    ^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_page.py", line 556, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+        "goto", self._navigation_timeout, locals_to_params(locals())
+    )
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_connection.py", line 558, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.txel.org/commissionerrules/?tab=tab9", waiting until "load"
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python313\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_connection.py", line 466, in _done_callback
+    exc = future.exception()
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_browser_context.py", line 250, in _on_route
+    handled = await route_handler.handle(route)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_helper.py", line 424, in handle
+    return await self._handle_internal(route)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_helper.py", line 460, in _handle_internal
+    await handler_finished_future
+asyncio.exceptions.CancelledError
+2025-10-18 03:50:02,006 [ERROR] Exception in callback SyncBase._sync.<locals>.<lambda>() at C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_sync_base.py:111
+handle: <Handle SyncBase._sync.<locals>.<lambda>() at C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_sync_base.py:111>
+Traceback (most recent call last):
+  File "C:\Users\Srushti\Desktop\website analyzer\src\crawler\test.py", line 101, in fetch_single_page_sync
+    page.goto(url, timeout=timeout, wait_until=wait_until)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\sync_api\_generated.py", line 9019, in goto
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.goto(
+        ^^^^^^^^^^^^^^^^^^^^
+            url=url, timeout=timeout, waitUntil=wait_until, referer=referer
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        )
+        ^
+    )
+    ^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_page.py", line 556, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+        "goto", self._navigation_timeout, locals_to_params(locals())
+    )
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_connection.py", line 558, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.txel.org/commissionerrules/?tab=tab9", waiting until "load"
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python313\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 111, in <lambda>
+    task.add_done_callback(lambda _: g_self.switch())
+                                     ~~~~~~~~~~~~~^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_helper.py", line 451, in _handler
+    self.handler(route, route.request)  # type: ignore
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_impl_to_api_mapping.py", line 123, in wrapper_func
+    return handler(
+        *list(map(lambda a: self.from_maybe_impl(a), args))[:arg_count]
+    )
+  File "C:\Users\Srushti\Desktop\website analyzer\src\crawler\test.py", line 99, in <lambda>
+    context.route("**/*", lambda route, request: route.abort() if request.resource_type in {"image", "stylesheet", "font", "media"} else route.continue_())
+                                                                                                                                         ~~~~~~~~~~~~~~~^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\sync_api\_generated.py", line 963, in continue_
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.continue_(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_network.py", line 506, in continue_
+    return await self._handle_route(_inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_network.py", line 452, in _handle_route
+    await callback()
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_network.py", line 504, in _inner
+    await self._inner_continue(False)
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_network.py", line 510, in _inner_continue
+    await self._race_with_page_close(
+    ...<17 lines>...
+    )
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_network.py", line 546, in _race_with_page_close
+    await asyncio.wait(
+    ...<2 lines>...
+    )
+  File "C:\Python313\Lib\asyncio\tasks.py", line 451, in wait
+    return await _wait(fs, timeout, return_when, loop)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\asyncio\tasks.py", line 537, in _wait
+    await waiter
+asyncio.exceptions.CancelledError
+2025-10-18 03:50:02,016 [ERROR] Exception in callback Connection.dispatch.<locals>._done_callback() at C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_connection.py:465
+handle: <Handle Connection.dispatch.<locals>._done_callback() at C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_connection.py:465>
+Traceback (most recent call last):
+  File "C:\Users\Srushti\Desktop\website analyzer\src\crawler\test.py", line 101, in fetch_single_page_sync
+    page.goto(url, timeout=timeout, wait_until=wait_until)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\sync_api\_generated.py", line 9019, in goto
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.goto(
+        ^^^^^^^^^^^^^^^^^^^^
+            url=url, timeout=timeout, waitUntil=wait_until, referer=referer
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        )
+        ^
+    )
+    ^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_page.py", line 556, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+        "goto", self._navigation_timeout, locals_to_params(locals())
+    )
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_connection.py", line 558, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.txel.org/commissionerrules/?tab=tab9", waiting until "load"
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python313\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_connection.py", line 466, in _done_callback
+    exc = future.exception()
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_browser_context.py", line 250, in _on_route
+    handled = await route_handler.handle(route)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_helper.py", line 424, in handle
+    return await self._handle_internal(route)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_helper.py", line 460, in _handle_internal
+    await handler_finished_future
+asyncio.exceptions.CancelledError
+2025-10-18 03:50:02,021 [ERROR] Exception in callback Connection.dispatch.<locals>._done_callback() at C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_connection.py:465
+handle: <Handle Connection.dispatch.<locals>._done_callback() at C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_connection.py:465>
+Traceback (most recent call last):
+  File "C:\Users\Srushti\Desktop\website analyzer\src\crawler\test.py", line 101, in fetch_single_page_sync
+    page.goto(url, timeout=timeout, wait_until=wait_until)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\sync_api\_generated.py", line 9019, in goto
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.goto(
+        ^^^^^^^^^^^^^^^^^^^^
+            url=url, timeout=timeout, waitUntil=wait_until, referer=referer
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        )
+        ^
+    )
+    ^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_page.py", line 556, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+        "goto", self._navigation_timeout, locals_to_params(locals())
+    )
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_connection.py", line 558, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.txel.org/commissionerrules/?tab=tab9", waiting until "load"
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python313\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_connection.py", line 466, in _done_callback
+    exc = future.exception()
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_browser_context.py", line 250, in _on_route
+    handled = await route_handler.handle(route)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_helper.py", line 424, in handle
+    return await self._handle_internal(route)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_helper.py", line 460, in _handle_internal
+    await handler_finished_future
+asyncio.exceptions.CancelledError
+2025-10-18 03:50:09,873 [ERROR] Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-10-18 03:50:09,874 [ERROR] Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-10-18 03:50:09,874 [ERROR] Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-10-18 03:50:22,372 [ERROR] Exception in callback Connection.dispatch.<locals>._done_callback() at C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_connection.py:465
+handle: <Handle Connection.dispatch.<locals>._done_callback() at C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_connection.py:465>
+Traceback (most recent call last):
+  File "C:\Users\Srushti\Desktop\website analyzer\src\crawler\test.py", line 101, in fetch_single_page_sync
+    page.goto(url, timeout=timeout, wait_until=wait_until)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\sync_api\_generated.py", line 9019, in goto
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.goto(
+        ^^^^^^^^^^^^^^^^^^^^
+            url=url, timeout=timeout, waitUntil=wait_until, referer=referer
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        )
+        ^
+    )
+    ^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_page.py", line 556, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+        "goto", self._navigation_timeout, locals_to_params(locals())
+    )
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_connection.py", line 558, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.txel.org/commissionerrules/?tab=tab18", waiting until "load"
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python313\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_connection.py", line 466, in _done_callback
+    exc = future.exception()
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_browser_context.py", line 250, in _on_route
+    handled = await route_handler.handle(route)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_helper.py", line 424, in handle
+    return await self._handle_internal(route)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_helper.py", line 460, in _handle_internal
+    await handler_finished_future
+asyncio.exceptions.CancelledError
+2025-10-18 03:50:22,379 [ERROR] Exception in callback SyncBase._sync.<locals>.<lambda>() at C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_sync_base.py:111
+handle: <Handle SyncBase._sync.<locals>.<lambda>() at C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_sync_base.py:111>
+Traceback (most recent call last):
+  File "C:\Users\Srushti\Desktop\website analyzer\src\crawler\test.py", line 101, in fetch_single_page_sync
+    page.goto(url, timeout=timeout, wait_until=wait_until)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\sync_api\_generated.py", line 9019, in goto
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.goto(
+        ^^^^^^^^^^^^^^^^^^^^
+            url=url, timeout=timeout, waitUntil=wait_until, referer=referer
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        )
+        ^
+    )
+    ^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_page.py", line 556, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+        "goto", self._navigation_timeout, locals_to_params(locals())
+    )
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_connection.py", line 558, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.txel.org/commissionerrules/?tab=tab18", waiting until "load"
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python313\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 111, in <lambda>
+    task.add_done_callback(lambda _: g_self.switch())
+                                     ~~~~~~~~~~~~~^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_helper.py", line 451, in _handler
+    self.handler(route, route.request)  # type: ignore
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_impl_to_api_mapping.py", line 123, in wrapper_func
+    return handler(
+        *list(map(lambda a: self.from_maybe_impl(a), args))[:arg_count]
+    )
+  File "C:\Users\Srushti\Desktop\website analyzer\src\crawler\test.py", line 99, in <lambda>
+    context.route("**/*", lambda route, request: route.abort() if request.resource_type in {"image", "stylesheet", "font", "media"} else route.continue_())
+                                                                                                                                         ~~~~~~~~~~~~~~~^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\sync_api\_generated.py", line 963, in continue_
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.continue_(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_network.py", line 506, in continue_
+    return await self._handle_route(_inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_network.py", line 452, in _handle_route
+    await callback()
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_network.py", line 504, in _inner
+    await self._inner_continue(False)
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_network.py", line 510, in _inner_continue
+    await self._race_with_page_close(
+    ...<17 lines>...
+    )
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_network.py", line 546, in _race_with_page_close
+    await asyncio.wait(
+    ...<2 lines>...
+    )
+  File "C:\Python313\Lib\asyncio\tasks.py", line 451, in wait
+    return await _wait(fs, timeout, return_when, loop)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\asyncio\tasks.py", line 537, in _wait
+    await waiter
+asyncio.exceptions.CancelledError
+2025-10-18 03:50:22,392 [ERROR] Exception in callback SyncBase._sync.<locals>.<lambda>() at C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_sync_base.py:111
+handle: <Handle SyncBase._sync.<locals>.<lambda>() at C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_sync_base.py:111>
+Traceback (most recent call last):
+  File "C:\Users\Srushti\Desktop\website analyzer\src\crawler\test.py", line 101, in fetch_single_page_sync
+    page.goto(url, timeout=timeout, wait_until=wait_until)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\sync_api\_generated.py", line 9019, in goto
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.goto(
+        ^^^^^^^^^^^^^^^^^^^^
+            url=url, timeout=timeout, waitUntil=wait_until, referer=referer
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        )
+        ^
+    )
+    ^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_page.py", line 556, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+        "goto", self._navigation_timeout, locals_to_params(locals())
+    )
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_connection.py", line 558, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.txel.org/commissionerrules/?tab=tab18", waiting until "load"
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python313\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 111, in <lambda>
+    task.add_done_callback(lambda _: g_self.switch())
+                                     ~~~~~~~~~~~~~^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_helper.py", line 451, in _handler
+    self.handler(route, route.request)  # type: ignore
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_impl_to_api_mapping.py", line 123, in wrapper_func
+    return handler(
+        *list(map(lambda a: self.from_maybe_impl(a), args))[:arg_count]
+    )
+  File "C:\Users\Srushti\Desktop\website analyzer\src\crawler\test.py", line 99, in <lambda>
+    context.route("**/*", lambda route, request: route.abort() if request.resource_type in {"image", "stylesheet", "font", "media"} else route.continue_())
+                                                                                                                                         ~~~~~~~~~~~~~~~^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\sync_api\_generated.py", line 963, in continue_
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.continue_(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_network.py", line 506, in continue_
+    return await self._handle_route(_inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_network.py", line 452, in _handle_route
+    await callback()
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_network.py", line 504, in _inner
+    await self._inner_continue(False)
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_network.py", line 510, in _inner_continue
+    await self._race_with_page_close(
+    ...<17 lines>...
+    )
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_network.py", line 546, in _race_with_page_close
+    await asyncio.wait(
+    ...<2 lines>...
+    )
+  File "C:\Python313\Lib\asyncio\tasks.py", line 451, in wait
+    return await _wait(fs, timeout, return_when, loop)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\asyncio\tasks.py", line 537, in _wait
+    await waiter
+asyncio.exceptions.CancelledError
+2025-10-18 03:50:22,403 [ERROR] Exception in callback Connection.dispatch.<locals>._done_callback() at C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_connection.py:465
+handle: <Handle Connection.dispatch.<locals>._done_callback() at C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_connection.py:465>
+Traceback (most recent call last):
+  File "C:\Users\Srushti\Desktop\website analyzer\src\crawler\test.py", line 101, in fetch_single_page_sync
+    page.goto(url, timeout=timeout, wait_until=wait_until)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\sync_api\_generated.py", line 9019, in goto
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.goto(
+        ^^^^^^^^^^^^^^^^^^^^
+            url=url, timeout=timeout, waitUntil=wait_until, referer=referer
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        )
+        ^
+    )
+    ^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_page.py", line 556, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+        "goto", self._navigation_timeout, locals_to_params(locals())
+    )
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_connection.py", line 558, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.txel.org/commissionerrules/?tab=tab18", waiting until "load"
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python313\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_connection.py", line 466, in _done_callback
+    exc = future.exception()
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_browser_context.py", line 250, in _on_route
+    handled = await route_handler.handle(route)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_helper.py", line 424, in handle
+    return await self._handle_internal(route)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_helper.py", line 460, in _handle_internal
+    await handler_finished_future
+asyncio.exceptions.CancelledError
+2025-10-18 03:50:22,410 [ERROR] Exception in callback Connection.dispatch.<locals>._done_callback() at C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_connection.py:465
+handle: <Handle Connection.dispatch.<locals>._done_callback() at C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_connection.py:465>
+Traceback (most recent call last):
+  File "C:\Users\Srushti\Desktop\website analyzer\src\crawler\test.py", line 101, in fetch_single_page_sync
+    page.goto(url, timeout=timeout, wait_until=wait_until)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\sync_api\_generated.py", line 9019, in goto
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.goto(
+        ^^^^^^^^^^^^^^^^^^^^
+            url=url, timeout=timeout, waitUntil=wait_until, referer=referer
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        )
+        ^
+    )
+    ^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_page.py", line 556, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+        "goto", self._navigation_timeout, locals_to_params(locals())
+    )
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_connection.py", line 558, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.txel.org/commissionerrules/?tab=tab18", waiting until "load"
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python313\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_connection.py", line 466, in _done_callback
+    exc = future.exception()
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_browser_context.py", line 250, in _on_route
+    handled = await route_handler.handle(route)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_helper.py", line 424, in handle
+    return await self._handle_internal(route)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_helper.py", line 460, in _handle_internal
+    await handler_finished_future
+asyncio.exceptions.CancelledError
+2025-10-18 03:50:22,416 [ERROR] Exception in callback SyncBase._sync.<locals>.<lambda>() at C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_sync_base.py:111
+handle: <Handle SyncBase._sync.<locals>.<lambda>() at C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_sync_base.py:111>
+Traceback (most recent call last):
+  File "C:\Users\Srushti\Desktop\website analyzer\src\crawler\test.py", line 101, in fetch_single_page_sync
+    page.goto(url, timeout=timeout, wait_until=wait_until)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\sync_api\_generated.py", line 9019, in goto
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.goto(
+        ^^^^^^^^^^^^^^^^^^^^
+            url=url, timeout=timeout, waitUntil=wait_until, referer=referer
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        )
+        ^
+    )
+    ^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_page.py", line 556, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+        "goto", self._navigation_timeout, locals_to_params(locals())
+    )
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_connection.py", line 558, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Page.goto: Timeout 15000ms exceeded.
+Call log:
+  - navigating to "https://www.txel.org/commissionerrules/?tab=tab18", waiting until "load"
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python313\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 111, in <lambda>
+    task.add_done_callback(lambda _: g_self.switch())
+                                     ~~~~~~~~~~~~~^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_helper.py", line 451, in _handler
+    self.handler(route, route.request)  # type: ignore
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_impl_to_api_mapping.py", line 123, in wrapper_func
+    return handler(
+        *list(map(lambda a: self.from_maybe_impl(a), args))[:arg_count]
+    )
+  File "C:\Users\Srushti\Desktop\website analyzer\src\crawler\test.py", line 99, in <lambda>
+    context.route("**/*", lambda route, request: route.abort() if request.resource_type in {"image", "stylesheet", "font", "media"} else route.continue_())
+                                                 ~~~~~~~~~~~^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\sync_api\_generated.py", line 675, in abort
+    self._sync(self._impl_obj.abort(errorCode=error_code))
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_network.py", line 357, in abort
+    await self._handle_route(
+    ...<9 lines>...
+    )
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_network.py", line 452, in _handle_route
+    await callback()
+  File "C:\Users\Srushti\Desktop\website analyzer\venv\Lib\site-packages\playwright\_impl\_network.py", line 546, in _race_with_page_close
+    await asyncio.wait(
+    ...<2 lines>...
+    )
+  File "C:\Python313\Lib\asyncio\tasks.py", line 451, in wait
+    return await _wait(fs, timeout, return_when, loop)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\asyncio\tasks.py", line 537, in _wait
+    await waiter
+asyncio.exceptions.CancelledError
+2025-10-18 03:50:36,141 [ERROR] Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-10-18 03:50:36,142 [ERROR] Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-10-18 03:50:36,142 [ERROR] Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-10-18 03:57:13,508 [INFO] \U0001f680 API started
